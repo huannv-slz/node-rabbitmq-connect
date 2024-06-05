@@ -1,8 +1,6 @@
 const amqp = require('amqplib');
-
-// Replace the URL with your RabbitMQ instance URL
 // const amqpUrl = 'amqps://pjrzgkug:3aVtADCfGBZ5ODAxc9K0dOc9rjYeow_R@shrimp.rmq.cloudamqp.com/pjrzgkug';
-const amqpUrl = "amqp://127.0.0.1:5672"
+const amqpUrl = "amqp://127.0.0.1:5672" // using docker
 
 async function connect() {
     try {
@@ -16,15 +14,7 @@ async function connect() {
 
         // Declare a queue
         const queue = 'test_queue';
-        const queue1 = "queue1"
-        const queue2 = "queue2"
-        const queue3 = "queue3"
-        const queue4 = "queue4"
         await channel.assertQueue(queue, { durable: false });
-        await channel.assertQueue(queue1, { durable: false });
-        await channel.assertQueue(queue2, { durable: false });
-        await channel.assertQueue(queue3, { durable: false });
-        await channel.assertQueue(queue4, { durable: false });
         console.log(`Queue "${queue}" created`);
 
         // Send a message
