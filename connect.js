@@ -1,7 +1,8 @@
 const amqp = require('amqplib');
 
 // Replace the URL with your RabbitMQ instance URL
-const amqpUrl = 'amqps://pjrzgkug:3aVtADCfGBZ5ODAxc9K0dOc9rjYeow_R@shrimp.rmq.cloudamqp.com/pjrzgkug';
+// const amqpUrl = 'amqps://pjrzgkug:3aVtADCfGBZ5ODAxc9K0dOc9rjYeow_R@shrimp.rmq.cloudamqp.com/pjrzgkug';
+const amqpUrl = "amqp://127.0.0.1:5672"
 
 async function connect() {
     try {
